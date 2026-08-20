@@ -109,21 +109,19 @@ public class tarefa2 {
                         );
 
                     } else {
-                        System.out.println("Tarefa inválida!");
+                        System.out.println("Tarefa invalida!");
                     }
 
                     break;
 
-                // SAIR
                 case 5:
 
                     System.out.println("Saindo do programa...");
                     break;
 
-                // OPÇÃO INVÁLIDA
                 default:
 
-                    System.out.println("Opção inválida!");
+                    System.out.println("Opção invalida!");
                     break;
             }
         }
