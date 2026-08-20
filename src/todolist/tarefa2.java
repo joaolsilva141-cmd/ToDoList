@@ -88,9 +88,47 @@ public class tarefa2 {
                     }else{
                         System.out.println("Tarefa inválida!");
                     }
-           }
+                 case 4:
+
+                    System.out.print(
+                        "Digite o número da tarefa que deseja excluir: "
+                    );
+
+                    int numeroExcluir = scanner.nextInt();
+                    int indiceExcluir = numeroExcluir - 1;
+
+                    if (indiceExcluir >= 0 &&
+                        indiceExcluir < tarefas.length &&
+                        tarefas[indiceExcluir] != null) {
+
+                        tarefas[indiceExcluir] = null;
+                        concluidas[indiceExcluir] = false;
+
+                        System.out.println(
+                            "Tarefa excluída com sucesso!"
+                        );
+
+                    } else {
+                        System.out.println("Tarefa inválida!");
+                    }
+
+                    break;
+
+                // SAIR
+                case 5:
+
+                    System.out.println("Saindo do programa...");
+                    break;
+
+                // OPÇÃO INVÁLIDA
+                default:
+
+                    System.out.println("Opção inválida!");
+                    break;
             }
-            
         }
+
+        scanner.close();
     }
+}
 
