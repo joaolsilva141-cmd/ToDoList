@@ -74,7 +74,6 @@ public class ToDoList2 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableTarefas);
 
         jButtonConcluirTarefa.setText("Concluir");
-        jButtonConcluirTarefa.addActionListener(this::jButtonConcluirTarefaActionPerformed);
 
         jButtonRemoverTarefa.setText("Remover");
         jButtonRemoverTarefa.addActionListener(this::jButtonRemoverTarefaActionPerformed);
@@ -123,69 +122,9 @@ public class ToDoList2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRemoverTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverTarefaActionPerformed
-        int linhaSelecionada = jTableTarefas.getSelectedRow();
-        
-        if (linhaSelecionada < 0){
-            JOptionPane.showMessageDialog(null, "Nenhuma tarefa foi selecionada!");
-            return;
-        
-        }
-        
-        int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir a tarefa?");
-        
-        String tarefaSelecionada = recuperarTarefa (linhaSelecionada);
-        
-        int indiceTarefaSelecionada = tarefas.indexOf(tarefaSelecionada);
-        
-        if (opcao == JOptionPane.YES_OPTION){
-            tarefas.remove(indiceTarefasSelecionada);
-        preencherTabela();
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRemoverTarefaActionPerformed
-     filtrarTabela();
-    
-     preecherTabela();
-    
-}
-    private Void filtrarTabela() {
-        int opcao = jComboBoxFiltroStatus.getSelectedIndex();
-        tarefasFiltradas.clear();
-        
-        String[] dados;
-        
-        for(String tarefa : tarefas){
-            dados = tarefa.split(";");
-            
-            switch (opcao) {
-                case 0:
-                    tarefasFiltradas.add(tarefa);
-                    break;
-                case 1:
-                    if (dados[1]. equals(CONCLUIDA)) {
-                        tarefasFiltradas.add(tarefa);
-                    }
-                        break;
-                case 2:
-                    if (dados[1].equals(NAO_CONCLUIDA)){
-                        tarefasFiltradas.add(tarefa);
-                    }
-                    break;
-                    
-                default:
-                    throw new AssertionError();
-            }
-        }
-       
 
-
-
-    private String recuperarTarefa (int indiceTarefa){
-        if (jComboBoxFiltroStatus.getSelectedIndex() > 0 ){
-            return tarefasFiltradas.get(indiceTarefa);
-        }else{
-            return tarefas.get(indiceTarefa);
-        }
-    }
     private void jButtonAdicionarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarTarefaActionPerformed
         if (jTextFieldDescricaoTarefa.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "A descrição da tarefa não pode ser vazia!");
@@ -204,14 +143,6 @@ public class ToDoList2 extends javax.swing.JFrame {
         jTextFieldDescricaoTarefa.setText("");
        
     }//GEN-LAST:event_jButtonAdicionarTarefaActionPerformed
-
-    private void jButtonConcluirTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConcluirTarefaActionPerformed
-    int linhaSelecionada = jTableTarefas.getSelectedRow();
-    
-    if (linhaSelecionada < 0){
-      JOptionPane.showMessageDialog(null, this);
-}
-    }//GEN-LAST:event_jButtonConcluirTarefaActionPerformed
     
     public boolean hasTarefaRepetida(String novaTarefa){
         for (String tarefa : tarefas){

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package telas;
+package Telas;
 
 import javax.swing.JOptionPane;
 
@@ -10,15 +10,17 @@ import javax.swing.JOptionPane;
  *
  * @author Aluno
  */
-public class Telalogin extends javax.swing.JFrame {
+public class TelaLogin extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Telalogin.class.getName());
-    private static final String usuario = "joao";
-    private static final String senha = "123";
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaLogin.class.getName());
+
+      private static final String usuario = "UsuárioTeste";
+                private static final String senha  = "JoaoBonfim";
+    
     /**
-     * Creates new form Telalogin
+     * Creates new form TelaLogin
      */
-    public Telalogin() {
+    public TelaLogin() {
         initComponents();
     }
 
@@ -31,97 +33,104 @@ public class Telalogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabellogin = new javax.swing.JLabel();
-        jLabelsenha = new javax.swing.JLabel();
-        jTextFieldusuario = new javax.swing.JTextField();
-        jLabelusuario1 = new javax.swing.JLabel();
-        jPasswordFieldsenha = new javax.swing.JPasswordField();
-        jButtonentrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldUsuario = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
+        jButtonEntrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabellogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabellogin.setText("Login");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Login");
 
-        jLabelsenha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelsenha.setForeground(new java.awt.Color(51, 0, 0));
-        jLabelsenha.setText("Senha");
+        jLabel2.setText("Usuáro:");
 
-        jTextFieldusuario.addActionListener(this::jTextFieldusuarioActionPerformed);
+        jTextFieldUsuario.addActionListener(this::jTextFieldUsuarioActionPerformed);
 
-        jLabelusuario1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelusuario1.setForeground(new java.awt.Color(51, 0, 0));
-        jLabelusuario1.setText("Usuario");
+        jLabel3.setText("Senha:");
 
-        jPasswordFieldsenha.addActionListener(this::jPasswordFieldsenhaActionPerformed);
+        jPasswordFieldSenha.addActionListener(this::jPasswordFieldSenhaActionPerformed);
 
-        jButtonentrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButtonentrar.setText("Entrar");
-        jButtonentrar.addActionListener(this::jButtonentrarActionPerformed);
+        jButtonEntrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonEntrar.setText("Entrar");
+        jButtonEntrar.addActionListener(this::jButtonEntrarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextFieldusuario, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabelsenha)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPasswordFieldsenha, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addGap(0, 348, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldUsuario)
+                            .addComponent(jPasswordFieldSenha))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonentrar)
-                .addGap(137, 137, 137))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jLabellogin, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelusuario1)))
-                .addContainerGap(126, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonEntrar)
+                        .addGap(153, 153, 153))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(169, 169, 169))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabellogin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(jLabelusuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextFieldusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(jLabelsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(jPasswordFieldsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(jButtonentrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addComponent(jButtonEntrar)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldusuarioActionPerformed
+    private void jTextFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldusuarioActionPerformed
+    }//GEN-LAST:event_jTextFieldUsuarioActionPerformed
 
-    private void jButtonentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonentrarActionPerformed
-        if (jTextFieldusuario.getText().equals( Usuario ) && jPasswordFieldsenha.getText().equals(senha)){
-        JOptionPane.showMessageDialog(null, " Usuario e senha correto! O sistema será iniciado!");
-    } else {
-            JOptionPane.showMessageDialog(null, " Algo está incorreto!");
-    }
-    }//GEN-LAST:event_jButtonentrarActionPerformed
+    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
+        if (jTextFieldUsuario.getText().equals(usuario) && jPasswordFieldSenha.getText().equals(senha)) {
+            JOptionPane.showMessageDialog(null, "Usuario e senha corretos! O sistema será iniciado!");
+            
+            MinhaPrimeiraTelinha minhaPrimeiraTelinha = new MinhaPrimeiraTelinha();
+            minhaPrimeiraTelinha.setVisible(true);
+            
+            this.dispose();
+        }else{
+            
+            JOptionPane.showMessageDialog(null, "Usuario e senha incorretos!");
+            
+            MinhaPrimeiraTelinha minhaPrimeiraTelinha = new MinhaPrimeiraTelinha();
+            minhaPrimeiraTelinha.setVisible(true);
+                    
+                    
+        }
+                    // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEntrarActionPerformed
 
-    private void jPasswordFieldsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldsenhaActionPerformed
+    private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldsenhaActionPerformed
+    }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,15 +154,15 @@ public class Telalogin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Telalogin().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new TelaLogin().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonentrar;
-    private javax.swing.JLabel jLabellogin;
-    private javax.swing.JLabel jLabelsenha;
-    private javax.swing.JLabel jLabelusuario1;
-    private javax.swing.JPasswordField jPasswordFieldsenha;
-    private javax.swing.JTextField jTextFieldusuario;
+    private javax.swing.JButton jButtonEntrar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
 }

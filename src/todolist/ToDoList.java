@@ -1,4 +1,4 @@
- /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
@@ -6,100 +6,83 @@ package todolist;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Aluno
- */
 public class ToDoList {
-
-    /**
-     * @param args the command line arguments
-     */
-     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        String[] tarefas = new String[10];
-        int total = 0;
+public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        
+        // Vetor para guardar no máximo 10 tarefas
+        String[] tarefas = new String[10]; 
+        int quantidade = 0;
         int opcao = 0;
 
-        while (opcao != 5) {
+        System.out.println("---Lista de tarefas---");
 
-            System.out.println("\n LISTA DE TAREFAS ");
-            System.out.println("1 - Adicionar tarefa");
-            System.out.println("2 - Ver tarefas");
-            System.out.println("3 - Concluir tarefa");
-            System.out.println("4 - Excluir tarefa");
-            System.out.println("5 - Sair");
-            System.out.print("Escolha: ");
-
-            opcao = scanner.nextInt();
-            scanner.nextLine();
+        while (opcao != 4) {
+            System.out.println("\n1 Adicionar tarefa");
+            System.out.println("2 Excluir tarefas");
+            System.out.println("3 Listar tarefas");
+            System.out.println("4 Sair");
+            System.out.print("Escolha o numero da opcao: ");
+            opcao = teclado.nextInt();
+            teclado.nextLine();
 
             if (opcao == 1) {
-
-                if (total < 10) {
+              
+                if (quantidade == 10) {
+                    System.out.println("A lista de tarefas esta cheia!");
+                } else {
                     System.out.print("Digite a tarefa: ");
-                    tarefas[total] = scanner.nextLine();
-                    total++;
+                    String texto = teclado.nextLine();
 
-                    System.out.println("Tarefa adicionada!");
-                } else {
-                    System.out.println("Lista cheia!");
-                }
-
-            } else if (opcao == 2) {
-
-                System.out.println("\n SUAS TAREFAS ");
-
-                if (total == 0) {
-                    System.out.println("Nenhuma tarefa.");
-                } else {
-                    for (int i = 0; i < total; i++) {
-                        System.out.println((i + 1) + " - " + tarefas[i]);
+                 
+                    for (int i = 0; i < 10; i++) {
+                        if (tarefas[i] == null) {
+                            tarefas[i] = texto;
+                            quantidade = quantidade + 1;
+                            System.out.println("Tarefa adicionada com sucesso!");
+                            break;
+                        }
                     }
                 }
-
-            } else if (opcao == 3) {
-
-                System.out.print("Digite o número da tarefa concluída: ");
-                int numero = scanner.nextInt();
-
-                if (numero >= 1 && numero <= total) {
-                    System.out.println("Tarefa concluída: " + tarefas[numero - 1]);
+            } 
+            else if (opcao == 2) {
+                if (quantidade == 0) {
+                    System.out.println("Nao tem nada para apagar ainda!");
                 } else {
-                    System.out.println("Número inválido!");
-                }
-
-            } else if (opcao == 4) {
-
-                System.out.print("Digite o número da tarefa para excluir: ");
-                int numero = scanner.nextInt();
-
-                if (numero >= 1 && numero <= total) {
-
-                    for (int i = numero - 1; i < total - 1; i++) {
-                        tarefas[i] = tarefas[i + 1];
+                    System.out.println("\nQual você quer apagar? (Digite o número)");
+                    for (int i = 0; i < 10; i++) {
+                        if (tarefas[i] != null) {
+                            System.out.println(i + " - " + tarefas[i]);
+                        }
                     }
+                    System.out.print("Número da tarefa: ");
+                    int posicaoApagar = teclado.nextInt();
 
-                    total--;
-
-                    System.out.println("Tarefa excluída!");
-
-                } else {
-                    System.out.println("Número inválido!");
+                   
+                    if (posicaoApagar >= 0 && posicaoApagar < 10 && tarefas[posicaoApagar] != null) {
+                        tarefas[posicaoApagar] = null; 
+                        quantidade = quantidade - 1;
+                        System.out.println("Tarefa excluída com sucesso!");
+                    } else {
+                        System.out.println("Ih, essa posição aí não vale!");
+                    }
                 }
-
-            } else if (opcao == 5) {
-
-                System.out.println("Programa encerrado!");
-
-            } else {
-
-                System.out.println("Opção inválida!");
+            } 
+            else if (opcao == 3) {
+                if (quantidade == 0) {
+                    System.out.println("Lista vazia, sem nada para fazer!");
+                } else {
+                    System.out.println("\nSua Lista Atual:");
+                    for (int i = 0; i < 10; i++) {
+                        if (tarefas[i] != null) {
+                            System.out.println("[" + i + "] " + tarefas[i]);
+                        }
+                    }
+                }
+            } 
+           
             }
         }
-
-        scanner.close();
-    }
+        
+    
 }
